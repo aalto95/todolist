@@ -2,21 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce103864-25f9-468f-b809-d726f6bc6159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AddTask.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddTask.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/List/Task/Task.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/List/TaskList.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/List/TaskList.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/List.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/Todo/Todo.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddTask.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddTask.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddTask.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/TaskList.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/TaskList.module.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +63,7 @@
       <workItem from="1619656145515" duration="965000" />
       <workItem from="1619672703158" duration="15008000" />
       <workItem from="1619980677502" duration="128000" />
-      <workItem from="1620280147103" duration="15506000" />
+      <workItem from="1620280147103" duration="17031000" />
     </task>
     <servers />
   </component>
