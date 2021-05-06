@@ -1,0 +1,8 @@
+.taskList {
+    width: 30vw;
+}
+
+.task {
+    display: grid;
+    grid-template-columns: 90% 10%;
+}

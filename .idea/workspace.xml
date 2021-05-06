@@ -2,10 +2,20 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce103864-25f9-468f-b809-d726f6bc6159" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/AddTask.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddTask.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/Task/Task.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/TaskList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/List/TaskList.module.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/Input.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Input.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Input.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/List.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/Todo/Todo.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,6 +25,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="ProjectId" id="1rBVLnMiIpuXuMB0w2cVS2sFbza" />
   <component name="ProjectLevelVcsManager">
@@ -52,6 +70,10 @@
       <workItem from="1619588257939" duration="976000" />
       <workItem from="1619589874513" duration="954000" />
       <workItem from="1619653795596" duration="1745000" />
+      <workItem from="1619656145515" duration="965000" />
+      <workItem from="1619672703158" duration="15008000" />
+      <workItem from="1619980677502" duration="128000" />
+      <workItem from="1620280147103" duration="15506000" />
     </task>
     <servers />
   </component>
