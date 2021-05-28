@@ -2,7 +2,7 @@ import {combineReducers, createStore} from "redux";
 import tasksReducer from "./tasks-reducer";
 
 let reducers = combineReducers({
-    tasks: tasksReducer
+    taskList: tasksReducer
 })
 
 let store = createStore(reducers)

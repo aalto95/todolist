@@ -2,21 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce103864-25f9-468f-b809-d726f6bc6159" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/AddField/AddField.jsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/AddField/AddField.module.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/redux/tasks-reducer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TaskList/AddField/AddField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TaskList/AddField/AddFieldContainer.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TaskList/TaskList.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/TaskList/TaskListContainer.jsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase-debug.log" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddTask.jsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddTask.module.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/TaskList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/state.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddField/AddField.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddField/AddField.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/AddField/AddField.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddField/AddField.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/AddField/AddField.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddField/AddField.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/AddField/AddField.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/Task/Task.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/Task/Task.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/TaskList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.module.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/TaskList.module.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.module.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/TaskList/TaskList.module.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/redux-store.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/redux/tasks-reducer.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/redux/tasks-reducer.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +45,7 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -56,6 +59,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components/TaskList" />
       <recent name="$PROJECT_DIR$/src/components/List" />
     </key>
   </component>
@@ -75,7 +79,7 @@
       <workItem from="1619672703158" duration="15008000" />
       <workItem from="1619980677502" duration="128000" />
       <workItem from="1620280147103" duration="17375000" />
-      <workItem from="1622219259480" duration="2110000" />
+      <workItem from="1622219259480" duration="5438000" />
     </task>
     <servers />
   </component>

@@ -1,13 +1,12 @@
 import React from "react";
 import './App.css';
-import TaskList from "./components/List/TaskList";
-import AddField from "./components/AddField/AddField";
+import AddFieldContainer from "./components/TaskList/AddField/AddFieldContainer";
+import TaskListContainer from "./components/TaskList/TaskListContainer";
 
 const App = props => {
     return (
     <div className="App">
-        <TaskList />
-        <AddField />
+        <TaskListContainer />
     </div>
     )
 }
