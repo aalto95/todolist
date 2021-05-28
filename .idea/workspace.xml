@@ -2,11 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ce103864-25f9-468f-b809-d726f6bc6159" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/components/AddField/AddField.jsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/AddField/AddField.module.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/redux-store.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/redux/tasks-reducer.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddTask.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddTask.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/AddTask.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddTask.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/firebase-debug.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddTask.jsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddTask.module.css" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/TaskList.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/List/TaskList.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/List/TaskList.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/state.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +51,7 @@
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="settings.editor.selected.configurable" value="watcher.settings" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -63,7 +74,8 @@
       <workItem from="1619656145515" duration="965000" />
       <workItem from="1619672703158" duration="15008000" />
       <workItem from="1619980677502" duration="128000" />
-      <workItem from="1620280147103" duration="17031000" />
+      <workItem from="1620280147103" duration="17375000" />
+      <workItem from="1622219259480" duration="2110000" />
     </task>
     <servers />
   </component>
