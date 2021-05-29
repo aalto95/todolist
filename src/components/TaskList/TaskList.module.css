@@ -1,0 +1,93 @@
+.title {
+  font-weight: 700;
+}
+
+.taskWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-radius: 50px;
+}
+.taskWrapper .taskDescription {
+  display: grid;
+}
+.taskWrapper .taskDescription p {
+  font-weight: 700;
+}
+.taskWrapper .taskDescription .rightAlignedBlock {
+  display: grid;
+  justify-items: center;
+}
+.taskWrapper .taskList {
+  padding: 0;
+}
+.taskWrapper .inputPanel .inputField {
+  border-radius: 50px;
+  border: none;
+  background-color: gainsboro;
+  height: 30px;
+  padding: 10px;
+  outline: none;
+}
+.taskWrapper .inputPanel .submitBtn {
+  margin-left: 5px;
+  border-radius: 50px;
+  border: none;
+  background-color: blueviolet;
+  height: 30px;
+  width: 60px;
+  font-weight: 700;
+}
+
+@media screen and (max-width: 799px) {
+  .taskWrapper {
+    min-width: 90vw;
+    min-height: 90vh;
+  }
+  .taskWrapper .taskDescription {
+    min-width: 80vw;
+    grid-template-rows: 50px;
+    grid-template-columns: 60% 40%;
+  }
+  .taskWrapper .taskDescription p {
+    font-weight: 700;
+  }
+  .taskWrapper .taskDescription .rightAlignedBlock {
+    grid-template-columns: 50% 50%;
+  }
+  .taskWrapper .taskList {
+    width: 80vw;
+  }
+  .taskWrapper .inputPanel .inputField {
+    width: 50vw;
+  }
+}
+@media screen and (min-width: 800px) {
+  .taskWrapper {
+    min-width: 50vw;
+    min-height: 50vh;
+    padding: 50px;
+    margin: 100px;
+  }
+  .taskWrapper .taskDescription {
+    min-width: 40vw;
+    grid-template-rows: 50px;
+    grid-template-columns: 60% 40%;
+  }
+  .taskWrapper .taskDescription p {
+    font-weight: 700;
+  }
+  .taskWrapper .taskDescription .rightAlignedBlock {
+    display: grid;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+  }
+  .taskWrapper .taskList {
+    width: 40vw;
+    padding: 0;
+  }
+}
+
+/*# sourceMappingURL=TaskList.module.css.map */

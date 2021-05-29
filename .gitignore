@@ -9,8 +9,6 @@
 /coverage
 
 # styles
-/src/components/TaskList/*.css.map
-/src/components/TaskList/*.css
 
 # production
 /build
