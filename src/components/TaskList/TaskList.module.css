@@ -1,3 +1,53 @@
+.title {
+  font-weight: 700;
+}
 
+.taskWrapper {
+  min-width: 50vw;
+  min-height: 50vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background-color: aliceblue;
+  border-radius: 50px;
+  padding: 50px;
+  margin: 100px;
+}
+.taskWrapper .taskDescription {
+  min-width: 20vw;
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 60% 40%;
+}
+.taskWrapper .taskDescription p {
+  font-weight: 700;
+}
+.taskWrapper .taskDescription .rightAlignedBlock {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
+}
+.taskWrapper .taskList {
+  width: 20vw;
+  padding: 0;
+}
+.taskWrapper .inputPanel .inputField {
+  border-radius: 50px;
+  border: none;
+  background-color: gainsboro;
+  height: 30px;
+  padding: 10px;
+  outline: none;
+}
+.taskWrapper .inputPanel .submitBtn {
+  margin-left: 5px;
+  border-radius: 50px;
+  border: none;
+  background-color: blueviolet;
+  height: 30px;
+  width: 60px;
+  font-weight: 700;
+}
 
 /*# sourceMappingURL=TaskList.module.css.map */

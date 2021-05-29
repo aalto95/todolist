@@ -6,19 +6,26 @@ const instance = axios.create({
 
 export const todoAPI = {
     getTasks: () => {
-        return instance.get('todolist')
+        return instance.get(`todolist`)
             .then(response => {
                 return response.data
             })
     },
     createTask: (text) => {
-        return instance.post('todolist', {text, isChecked: false})
+        return instance.post(`todolist`, {text, isChecked: false})
             .then(response => {
                 return response.data
             })
     },
     toggleIsChecked: (id, isChecked) => {
         return instance.put(`todolist/${id}`, { isChecked })
+            .then(response => {
+                console.log(response.data)
+                return response.data
+            })
+    },
+    deleteTask: (id) => {
+        return instance.delete(`todolist/${id}`)
             .then(response => {
                 console.log(response.data)
                 return response.data

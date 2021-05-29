@@ -1,7 +1,7 @@
 import React from "react";
-import styles from 'Preloader.module.css'
+import styles from './Preloader.module.css'
 
-const Preloader = () => {
+const Preloader = (props) => {
     return (
         <div className={styles.ldsDualRing}></div>
     )

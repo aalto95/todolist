@@ -1,11 +1,23 @@
 .listItem {
+  min-width: 20vw;
   list-style: none;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 60% 40%;
+  align-items: center;
+  word-break: break-word;
+}
+.listItem .taskText {
+  margin: 0;
+}
+.listItem .functionality {
+  display: grid;
+  grid-template-rows: 50px;
+  grid-template-columns: 50% 50%;
+  justify-items: center;
   align-items: center;
 }
-.listItem p {
-  margin: 0;
+.listItem .functionality .trashIcon {
+  width: 30px;
 }
 
 /*# sourceMappingURL=Task.module.css.map */

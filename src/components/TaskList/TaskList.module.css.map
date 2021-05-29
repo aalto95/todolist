@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"TaskList.module.css"}
+{"version":3,"sourceRoot":"","sources":["TaskList.module.scss"],"names":[],"mappings":"AAAA;EACE;;;AAGF;EACE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;AACA;EACE;EACA;EACA;EACA;;AACA;EACE;;AAEF;EACE;EACA;EACA;;AAGJ;EACE;EACA;;AAGA;EACE;EACA;EACA;EACA;EACA;EACA;;AAEF;EACE;EACA;EACA;EACA;EACA;EACA;EACA","file":"TaskList.module.css"}

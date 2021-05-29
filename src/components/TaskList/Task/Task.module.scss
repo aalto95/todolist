@@ -1,12 +1,27 @@
 
 
 .listItem {
+  min-width: 20vw;
   list-style: none;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: 60% 40%;
   align-items: center;
-
-  p {
+  word-break: break-word;
+  .taskText {
     margin: 0;
   }
+  .functionality {
+    display: grid;
+    grid-template-rows: 50px;
+    grid-template-columns: 50% 50%;
+    justify-items: center;
+    align-items: center;
+    .checkBox {
+
+    }
+    .trashIcon {
+      width: 30px;
+    }
+  }
 }
+

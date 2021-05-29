@@ -1,4 +1,5 @@
 const CREATE_TASK = 'CREATE_NEW_TASK'
+const DELETE_TASK = 'DELETE_TASK'
 const CHANGE_TEXT = 'CHANGE_TEXT'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 const TOGGLE_IS_CHECKED = 'TOGGLE_IS_CHECKED'
@@ -35,8 +36,13 @@ const tasksReducer = (state = initialState, action) => {
             }
         case TOGGLE_IS_CHECKED:
             return {
-                ...state.tasks[action.id].isChecked = action.isChecked,
                 ...state,
+                ...state.tasks[action.id].isChecked = action.isChecked
+            }
+        case DELETE_TASK:
+            return {
+                ...state,
+                ...state.tasks.splice(action.id, 1)
             }
         default:
             return state
@@ -48,5 +54,6 @@ export let createTask = (task) => ({type: CREATE_TASK, task})
 export let setTasks = (tasks) => ({type: SET_TASKS, tasks})
 export let toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export let toggleIsChecked = (id, isChecked) => ({type: TOGGLE_IS_CHECKED, id, isChecked})
+export let deleteTask = (id) => ({type: DELETE_TASK, id})
 
 export default tasksReducer

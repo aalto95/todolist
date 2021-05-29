@@ -1,9 +1,17 @@
 import React, {useEffect} from "react";
 import s from './TaskList.module.css'
 import TaskList from "./TaskList";
-import {connect} from "react-redux";
-import {createTask, onTextChange, setTasks, toggleIsChecked, toggleIsFetching} from "../../redux/tasks-reducer";
+import {
+    createTask,
+    deleteTask,
+    onTextChange,
+    setTasks,
+    toggleIsChecked,
+    toggleIsFetching
+} from "../../redux/tasks-reducer";
 import {todoAPI} from "../../api/api";
+import {connect} from "react-redux";
+import Preloader from "../Preloader/Preloader";
 
 
 const TaskListContainer = props => {
@@ -18,12 +26,14 @@ const TaskListContainer = props => {
     }
     useEffect(setTasks, [])
     return ( <>
-            {props.isFetching ? <div>loading</div> : <TaskList
+            {props.isFetching ? <Preloader/> : <TaskList
             tasks={props.tasks}
             text={props.text}
             createTask={props.createTask}
+            deleteTask={props.deleteTask}
             onTextChange={props.onTextChange}
             toggleIsChecked={props.toggleIsChecked}
+            setTasks={setTasks}
         />}
     </>
     )
@@ -42,7 +52,8 @@ let mapDispatchToProps = {
     createTask,
     onTextChange,
     toggleIsFetching,
-    toggleIsChecked
+    toggleIsChecked,
+    deleteTask
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (TaskListContainer)
