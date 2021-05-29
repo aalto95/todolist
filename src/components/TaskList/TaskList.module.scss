@@ -3,32 +3,23 @@
 }
 
 .taskWrapper {
-  min-width: 50vw;
-  min-height: 50vh;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
   background-color: aliceblue;
   border-radius: 50px;
-  padding: 50px;
-  margin: 100px;
   .taskDescription {
-    min-width: 20vw;
     display: grid;
-    grid-template-rows: 50px;
-    grid-template-columns: 60% 40%;
     p {
       font-weight: 700;
     }
     .rightAlignedBlock {
       display: grid;
-      grid-template-columns: 50% 50%;
       justify-items: center;
     }
   }
   .taskList {
-    width: 20vw;
     padding: 0;
   }
   .inputPanel {
@@ -52,10 +43,64 @@
   }
 }
 
-@media screen and (max -width: 999px) {
-
+@media screen and (max-width: 799px) {
+  .taskWrapper {
+    min-width: 90vw;
+    min-height: 90vh;
+    .taskDescription {
+      min-width: 80vw;
+      grid-template-rows: 50px;
+      grid-template-columns: 60% 40%;
+      p {
+        font-weight: 700;
+      }
+      .rightAlignedBlock {
+        grid-template-columns: 50% 50%;
+      }
+    }
+    .taskList {
+      max-width: 80vw;
+    }
+    .inputPanel {
+      .inputField {
+        width: 50vw;
+      }
+      .submitBtn {
+      }
+    }
+  }
 }
 
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 800px) {
+  .taskWrapper {
+    min-width: 50vw;
+    min-height: 50vh;
+    padding: 50px;
+    margin: 100px;
+    .taskDescription {
+      min-width: 40vw;
+      grid-template-rows: 50px;
+      grid-template-columns: 60% 40%;
+      p {
+        font-weight: 700;
+      }
+      .rightAlignedBlock {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        justify-items: center;
+      }
+    }
+    .taskList {
+      max-width: 40vw;
+      padding: 0;
+    }
+    .inputPanel {
+      .inputField {
 
+      }
+      .submitBtn {
+
+      }
+    }
+  }
 }
