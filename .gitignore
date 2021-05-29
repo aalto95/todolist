@@ -9,8 +9,8 @@
 /coverage
 
 # styles
-/src/*.css.map
-/src/*.css
+/src/components/*.css.map
+/src/components/*.css
 
 # production
 /build
