@@ -1,5 +1,4 @@
 import React, {useEffect} from "react";
-import s from './TaskList.module.css'
 import TaskList from "./TaskList";
 import {
     createTask,
@@ -25,17 +24,14 @@ const TaskListContainer = props => {
             })
     }
     useEffect(setTasks, [])
-    return ( <>
-            {props.isFetching ? <Preloader/> : <TaskList
-            tasks={props.tasks}
-            text={props.text}
-            createTask={props.createTask}
-            deleteTask={props.deleteTask}
-            onTextChange={props.onTextChange}
-            toggleIsChecked={props.toggleIsChecked}
+
+    if (props.isFetching) return <Preloader />
+
+    return (
+        <TaskList
+            {...props}
             setTasks={setTasks}
-        />}
-    </>
+        />
     )
 }
 
@@ -53,7 +49,7 @@ let mapDispatchToProps = {
     onTextChange,
     toggleIsFetching,
     toggleIsChecked,
-    deleteTask
+    deleteTask,
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (TaskListContainer)

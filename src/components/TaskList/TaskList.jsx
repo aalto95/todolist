@@ -1,5 +1,4 @@
 import React from "react";
-import s from './TaskList.module.css'
 import {todoAPI} from "../../api/api";
 import {Task} from "./Task/Task";
 import styles from './TaskList.module.css'
