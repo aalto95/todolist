@@ -5,13 +5,16 @@ const DELETE_TASK = 'DELETE_TASK'
 const CHANGE_TEXT = 'CHANGE_TEXT'
 const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 const TOGGLE_IS_CHECKED = 'TOGGLE_IS_CHECKED'
+const TOGGLE_EDIT_MODE = 'TOGGLE_EDIT_MODE'
 const SET_TASKS = 'SET_TASKS'
-
 
 let initialState = {
     text: "",
     tasks: [],
-    isFetching: false
+    isFetching: false,
+    editText: null,
+    editId: null,
+    editMode: false
 }
 const tasksReducer = (state = initialState, action) => {
     switch(action.type) {
@@ -46,6 +49,12 @@ const tasksReducer = (state = initialState, action) => {
                 ...state,
                 ...state.tasks.splice(action.id, 1)
             }
+        case TOGGLE_EDIT_MODE:
+            return {
+                ...state,
+                editId: action.editId,
+                editMode: action.editMode
+            }
         default:
             return state
     }
@@ -57,6 +66,8 @@ export let setTasks = (tasks) => ({type: SET_TASKS, tasks})
 export let toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export let toggleIsChecked = (id, isChecked) => ({type: TOGGLE_IS_CHECKED, id, isChecked})
 export let deleteTask = (id) => ({type: DELETE_TASK, id})
+export let toggleEditMode = (editId, editMode) => ({type: TOGGLE_EDIT_MODE, editId, editMode})
+
 
 export let requestTasks = () => async dispatch => {
     dispatch(toggleIsFetching(true))
@@ -79,6 +90,11 @@ export let onDelete = id => async dispatch => {
     let response = await todoAPI.deleteTask(id)
     dispatch(deleteTask(response.id))
     dispatch(requestTasks())
+}
+
+export let onEditFinish = (id, text) => (dispatch) => {
+    dispatch(toggleEditMode(id, false))
+    todoAPI.editTaskText(id, text)
 }
 
 export default tasksReducer

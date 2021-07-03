@@ -14,7 +14,7 @@ const TaskList = props => {
             <h1 className={styles.title}>To-Do List</h1>
             <div className={styles.taskWrapper}>
                 <div className={styles.taskDescription}>
-                    <p>task</p>
+                    <p>task (double click to edit)</p>
                     <div className={styles.rightAlignedBlock}>
                         <p>status</p>
                         <p>delete</p>
@@ -25,6 +25,11 @@ const TaskList = props => {
                         return <Task
                             task={task}
                             key={task.id}
+                            editMode={props.editMode}
+                            editId={props.editId}
+                            toggleEditMode={props.toggleEditMode}
+                            onEditFinish={props.onEditFinish}
+                            onTextChange={props.onTextChange}
                             requestTasks={props.requestTasks}
                             onCheck={props.onCheck}
                             onDelete={props.onDelete}

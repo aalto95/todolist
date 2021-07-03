@@ -1,11 +1,9 @@
 import React, {useEffect} from "react";
 import TaskList from "./TaskList";
 import {
-    addTask,
-    deleteTask, onCheck, onDelete,
+    addTask, onCheck, onDelete, onEditFinish,
     onTextChange, requestTasks,
-    setTasks,
-    toggleIsChecked,
+    setTasks, toggleEditMode,
     toggleIsFetching
 } from "../../redux/tasks-reducer";
 import {connect} from "react-redux";
@@ -27,7 +25,9 @@ let mapStateToProps = (store) => {
     return {
         text: store.taskList.text,
         tasks: store.taskList.tasks,
-        isFetching: store.taskList.isFetching
+        isFetching: store.taskList.isFetching,
+        editId: store.taskList.editId,
+        editMode: store.taskList.editMode,
     }
 }
 
@@ -38,7 +38,9 @@ let mapDispatchToProps = {
     toggleIsFetching,
     requestTasks,
     onCheck,
-    onDelete
+    onDelete,
+    toggleEditMode,
+    onEditFinish
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (TaskListContainer)

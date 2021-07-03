@@ -30,5 +30,12 @@ export const todoAPI = {
                 console.log(response.data)
                 return response.data
             })
+    },
+    editTaskText: (id, text) => {
+        return instance.put(`todolist/${id}`, { text })
+            .then(response => {
+                console.log(response.data)
+                return response.data
+            })
     }
 }
