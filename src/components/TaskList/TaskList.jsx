@@ -27,6 +27,7 @@ const TaskList = props => {
                             key={task.id}
                             editMode={props.editMode}
                             editId={props.editId}
+                            isChecked={props.isChecked}
                             toggleEditMode={props.toggleEditMode}
                             onEditFinish={props.onEditFinish}
                             onTextChange={props.onTextChange}

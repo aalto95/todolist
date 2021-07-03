@@ -1,11 +1,10 @@
 import React, {useState} from "react";
 import styles from './Task.module.css'
 import trashIcon from "./../../../assets/images/trash.svg"
-import {todoAPI} from "../../../api/api";
-
 export const Task = props => {
 
     let onCheck = () => {
+        console.log(props.task.isChecked)
         props.onCheck(props.task.id, props.task.isChecked)
     }
 

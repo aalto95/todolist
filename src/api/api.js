@@ -20,14 +20,12 @@ export const todoAPI = {
     toggleIsChecked: (id, isChecked) => {
         return instance.put(`todolist/${id}`, { isChecked })
             .then(response => {
-                console.log(response.data)
                 return response.data
             })
     },
     deleteTask: (id) => {
         return instance.delete(`todolist/${id}`)
             .then(response => {
-                console.log(response.data)
                 return response.data
             })
     },

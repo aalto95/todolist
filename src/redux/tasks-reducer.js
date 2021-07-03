@@ -42,12 +42,14 @@ const tasksReducer = (state = initialState, action) => {
         case TOGGLE_IS_CHECKED:
             return {
                 ...state,
-                ...state.tasks[action.id].isChecked = action.isChecked
+                tasks: state.tasks.map(task => task.id === action.id
+                    ? {...task, isChecked: action.isChecked}
+                    : task)
             }
         case DELETE_TASK:
             return {
                 ...state,
-                ...state.tasks.splice(action.id, 1)
+                tasks: state.tasks.filter(task => task.id !== action.id)
             }
         case TOGGLE_EDIT_MODE:
             return {
@@ -70,9 +72,7 @@ export let toggleEditMode = (editId, editMode) => ({type: TOGGLE_EDIT_MODE, edit
 
 
 export let requestTasks = () => async dispatch => {
-    dispatch(toggleIsFetching(true))
     let response = await todoAPI.getTasks()
-    dispatch(toggleIsFetching(false))
     dispatch(setTasks(response))
 }
 
@@ -83,13 +83,12 @@ export let addTask = text => async dispatch => {
 
 export let onCheck = (id, isChecked) => async dispatch => {
     let response = await todoAPI.toggleIsChecked(id, !isChecked)
-    dispatch(requestTasks())
+    dispatch(toggleIsChecked(response.id, response.isChecked))
 }
 
 export let onDelete = id => async dispatch => {
     let response = await todoAPI.deleteTask(id)
-    dispatch(deleteTask(response.id))
-    dispatch(requestTasks())
+    dispatch(deleteTask(id))
 }
 
 export let onEditFinish = (id, text) => (dispatch) => {
