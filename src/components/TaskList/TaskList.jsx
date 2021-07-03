@@ -1,17 +1,14 @@
 import React from "react";
-import {todoAPI} from "../../api/api";
 import {Task} from "./Task/Task";
 import styles from './TaskList.module.css'
 
 const TaskList = props => {
 
-    let createTask = (e) => {
+    let addTask = (e) => {
         e.preventDefault()
-        todoAPI.createTask(props.text)
-            .then(response => {
-                props.createTask(response)
-            })
+        props.addTask(props.text)
     }
+
     return (
         <>
             <h1 className={styles.title}>To-Do List</h1>
@@ -27,14 +24,14 @@ const TaskList = props => {
                     {props.tasks.map((task) => {
                         return <Task
                             task={task}
-                            toggleIsChecked={props.toggleIsChecked}
-                            deleteTask={props.deleteTask}
                             key={task.id}
-                            setTasks={props.setTasks}
+                            requestTasks={props.requestTasks}
+                            onCheck={props.onCheck}
+                            onDelete={props.onDelete}
                         />
                     })}
                 </ul>
-                <form className={styles.inputPanel} onSubmit={createTask}>
+                <form className={styles.inputPanel} onSubmit={addTask}>
                     <input type="text" value={props.text} className={styles.inputField} onChange={(e) => props.onTextChange(e.target.value)}/>
                     <button type="submit" disabled={!props.text} className={styles.submitBtn}>Add</button>
                 </form>

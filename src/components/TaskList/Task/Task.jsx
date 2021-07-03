@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from './Task.module.css'
 import {todoAPI} from "../../../api/api";
 import trashIcon from "./../../../assets/images/trash.svg"
@@ -6,19 +6,11 @@ import trashIcon from "./../../../assets/images/trash.svg"
 export const Task = props => {
 
     let onCheck = () => {
-        todoAPI.toggleIsChecked(props.task.id, !props.task.isChecked)
-            .then(response => {
-                //props.toggleIsChecked(response.id, response.isChecked)
-                props.setTasks()
-            })
+        props.onCheck(props.task.id, props.task.isChecked)
     }
 
     let onDelete = () => {
-        todoAPI.deleteTask(props.task.id)
-            .then(response => {
-                props.deleteTask(response.id)
-                props.setTasks()
-            })
+        props.onDelete(props.task.id)
     }
     return (
         <li className={styles.listItem} key={props.task.id} >

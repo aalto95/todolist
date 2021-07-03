@@ -1,3 +1,5 @@
+import {todoAPI} from "../api/api";
+
 const CREATE_TASK = 'CREATE_NEW_TASK'
 const DELETE_TASK = 'DELETE_TASK'
 const CHANGE_TEXT = 'CHANGE_TEXT'
@@ -55,5 +57,28 @@ export let setTasks = (tasks) => ({type: SET_TASKS, tasks})
 export let toggleIsFetching = (isFetching) => ({type: TOGGLE_IS_FETCHING, isFetching})
 export let toggleIsChecked = (id, isChecked) => ({type: TOGGLE_IS_CHECKED, id, isChecked})
 export let deleteTask = (id) => ({type: DELETE_TASK, id})
+
+export let requestTasks = () => async dispatch => {
+    dispatch(toggleIsFetching(true))
+    let response = await todoAPI.getTasks()
+    dispatch(toggleIsFetching(false))
+    dispatch(setTasks(response))
+}
+
+export let addTask = text => async dispatch => {
+    let response = await todoAPI.createTask(text)
+    dispatch(createTask(response))
+}
+
+export let onCheck = (id, isChecked) => async dispatch => {
+    let response = await todoAPI.toggleIsChecked(id, !isChecked)
+    dispatch(requestTasks())
+}
+
+export let onDelete = id => async dispatch => {
+    let response = await todoAPI.deleteTask(id)
+    dispatch(deleteTask(response.id))
+    dispatch(requestTasks())
+}
 
 export default tasksReducer

@@ -1,36 +1,24 @@
 import React, {useEffect} from "react";
 import TaskList from "./TaskList";
 import {
-    createTask,
-    deleteTask,
-    onTextChange,
+    addTask,
+    deleteTask, onCheck, onDelete,
+    onTextChange, requestTasks,
     setTasks,
     toggleIsChecked,
     toggleIsFetching
 } from "../../redux/tasks-reducer";
-import {todoAPI} from "../../api/api";
 import {connect} from "react-redux";
 import Preloader from "../Preloader/Preloader";
 
 
 const TaskListContainer = props => {
-    let setTasks = () => {
-        props.toggleIsFetching(true)
-        todoAPI.getTasks()
-            .then(response => {
-                props.toggleIsFetching(false)
-                console.log(response)
-                props.setTasks(response)
-            })
-    }
-    useEffect(setTasks, [])
 
+    useEffect(props.requestTasks, [])
     if (props.isFetching) return <Preloader />
-
     return (
         <TaskList
             {...props}
-            setTasks={setTasks}
         />
     )
 }
@@ -45,11 +33,12 @@ let mapStateToProps = (store) => {
 
 let mapDispatchToProps = {
     setTasks,
-    createTask,
+    addTask,
     onTextChange,
     toggleIsFetching,
-    toggleIsChecked,
-    deleteTask,
+    requestTasks,
+    onCheck,
+    onDelete
 }
 
 export default connect(mapStateToProps, mapDispatchToProps) (TaskListContainer)
