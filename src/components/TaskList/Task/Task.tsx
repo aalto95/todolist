@@ -43,7 +43,6 @@ const Task: React.FC<TaskListProps> = (props) => {
                 <img src={trashIcon} alt="" className={styles.trashIcon} onClick={onDelete}/>
             </div>
         </li>
-
     )
 }
 
