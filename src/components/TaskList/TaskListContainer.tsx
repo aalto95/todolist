@@ -8,11 +8,12 @@ import {
 } from "../../redux/tasks-reducer";
 import {connect} from "react-redux";
 import Preloader from "../Preloader/Preloader";
+import {TaskListStateToProps} from "../../types/types";
 
 
-const TaskListContainer = props => {
+const TaskListContainer: React.FC = (props : any) => {
 
-    useEffect(props.requestTasks, [])
+    useEffect(() => props.requestTasks(), [])
     if (props.isFetching) return <Preloader />
     return (
         <TaskList
@@ -21,7 +22,7 @@ const TaskListContainer = props => {
     )
 }
 
-let mapStateToProps = (store) => {
+let mapStateToProps = (store : TaskListStateToProps) => {
     return {
         text: store.taskList.text,
         tasks: store.taskList.tasks,

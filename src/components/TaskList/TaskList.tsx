@@ -1,12 +1,13 @@
 import React from "react";
-import {Task} from "./Task/Task";
+import { TaskListProps } from "../../types/types";
+import Task from "./Task/Task";
 import styles from './TaskList.module.css'
 
-const TaskList = props => {
+const TaskList: React.FC<TaskListProps> = (props) => {
 
-    let addTask = (e) => {
+    let addTask = (e : any) => {
         e.preventDefault()
-        props.addTask(props.text)
+        props.addTask && props.addTask(props.text)
     }
 
     return (
@@ -21,7 +22,7 @@ const TaskList = props => {
                     </div>
                 </div>
                 <ul className={styles.taskList}>
-                    {props.tasks.map((task) => {
+                    {props.tasks?.map((task) => {
                         return <Task
                             task={task}
                             key={task.id}

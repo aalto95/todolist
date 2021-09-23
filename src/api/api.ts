@@ -4,6 +4,8 @@ const instance = axios.create({
     baseURL: 'https://60a0e51dd2855b00173b15c9.mockapi.io/'
 })
 
+
+
 export const todoAPI = {
     getTasks: () => {
         return instance.get(`todolist`)
@@ -11,25 +13,25 @@ export const todoAPI = {
                 return response.data
             })
     },
-    createTask: (text) => {
+    createTask: (text : string) => {
         return instance.post(`todolist`, {text, isChecked: false})
             .then(response => {
                 return response.data
             })
     },
-    toggleIsChecked: (id, isChecked) => {
+    toggleIsChecked: (id : string, isChecked : boolean) => {
         return instance.put(`todolist/${id}`, { isChecked })
             .then(response => {
                 return response.data
             })
     },
-    deleteTask: (id) => {
+    deleteTask: (id : string) => {
         return instance.delete(`todolist/${id}`)
             .then(response => {
                 return response.data
             })
     },
-    editTaskText: (id, text) => {
+    editTaskText: (id : string, text : string) => {
         return instance.put(`todolist/${id}`, { text })
             .then(response => {
                 console.log(response.data)
