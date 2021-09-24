@@ -3,7 +3,7 @@ export interface TaskListProps {
   text?: string
   tasks?: TaskType[]
   editMode: boolean
-  editId: string
+  editId: number
   isChecked: boolean
   toggleEditMode: Function
   onEditFinish: Function
@@ -16,7 +16,7 @@ export interface TaskListProps {
 }
 
 export interface TaskType {
-  id: string
+  id: number
   text: string
   isChecked: boolean
 }
@@ -26,7 +26,7 @@ export interface TaskListStateToProps {
     text: string
     tasks: TaskType[]
     isFetching: boolean
-    editId: string
+    editId: number
     editMode: boolean
   }
 }

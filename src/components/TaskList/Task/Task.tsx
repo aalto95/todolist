@@ -2,19 +2,28 @@ import React, {useState} from "react";
 import styles from './Task.module.css'
 import trashIcon from "./../../../assets/images/trash.svg"
 import {TaskListProps} from "../../../types/types";
+import {useRemoveTaskMutation} from "../../../features/api/tasks-api-slice";
+import {useAppDispatch, useAppSelector} from "../../../app/hooks";
+import {setEditId, toggleEditMode} from "../../../features/tasks-slice";
 const Task: React.FC<TaskListProps> = (props) => {
+
+    const editMode = useAppSelector((state) => state.tasks.editMode)
+
+    const dispatch = useAppDispatch()
 
     let onCheck = () => {
         console.log(props.task?.isChecked)
         props.onCheck(props.task?.id, props.task?.isChecked)
     }
 
+    const [removeTask, { isLoading }] = useRemoveTaskMutation()
     let onDelete = () => {
-        props.onDelete(props.task?.id)
+        removeTask(props.task?.id)
     }
 
     let onEditStart = () => {
-        props.toggleEditMode(props.task?.id, true)
+        dispatch(toggleEditMode(true))
+        dispatch(setEditId(props.task?.id))
     }
 
     let onEditFinish = () => {
@@ -26,7 +35,7 @@ const Task: React.FC<TaskListProps> = (props) => {
     return (
         <li className={styles.listItem} key={props.task?.id}>
             {
-                props.editMode && props.editId === props.task?.id
+                editMode && props.editId === props.task?.id
                 ?   <input
                         type="text"
                         value={editingText}

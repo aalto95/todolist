@@ -1,11 +1,11 @@
 import './App.css';
 import React from "react";
-import TaskListContainer from "./components/TaskList/TaskListContainer";
+import TaskList from "./components/TaskList/TaskList";
 
 const App = () => {
     return (
     <div className="App">
-        <TaskListContainer />
+        <TaskList />
     </div>
     )
 }
