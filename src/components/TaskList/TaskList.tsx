@@ -1,10 +1,10 @@
-import React, {useEffect, useState} from "react";
+import React, {useState} from "react";
 import Task from "./Task/Task";
 import styles from './TaskList.module.css'
 import {useAddTaskMutation, useFetchTasksQuery} from "../../features/api/tasks-api-slice";
 import {useAppDispatch, useAppSelector} from "../../app/hooks";
 import {setTasks, textChanged, todoAdded} from "../../features/tasks-slice";
-import {createAsyncThunk, Draft} from "@reduxjs/toolkit";
+import { TaskType } from '../../types/types'
 
 const TaskList: React.FC = (props) => {
 
@@ -26,7 +26,7 @@ const TaskList: React.FC = (props) => {
 
     const submitForm = (e : any) => {
         e.preventDefault()
-        const onSuccess = (fulfilled : any) => {
+        const onSuccess = (fulfilled : TaskType) => {
             dispatch(todoAdded(fulfilled))
             dispatch(textChanged(""))
         }
@@ -47,7 +47,6 @@ const TaskList: React.FC = (props) => {
                 </div>
                 <ul className={styles.taskList}>
                     {tasks?.map((task) => {
-                        // @ts-ignore
                         return <Task task={task} key={task.id}
                         />
                     })}

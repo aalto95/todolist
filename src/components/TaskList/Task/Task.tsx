@@ -1,57 +1,71 @@
-import React, {useState} from "react";
+import React from "react";
 import styles from './Task.module.css'
 import trashIcon from "./../../../assets/images/trash.svg"
-import {TaskListProps} from "../../../types/types";
-import {useRemoveTaskMutation, useUpdateTaskMutation} from "../../../features/api/tasks-api-slice";
+import {TaskType} from "../../../types/types";
+import {useRemoveTaskMutation, useCheckTaskMutation, useChangeTaskMutation} from "../../../features/api/tasks-api-slice";
 import {useAppDispatch, useAppSelector} from "../../../app/hooks";
-import {checkToggled, setEditId, todoRemoved, toggleEditMode} from "../../../features/tasks-slice";
-const Task: React.FC<TaskListProps> = (props) => {
+import {checkToggled, editTextChanged, setEditId, todoChanged, todoRemoved, toggleEditMode} from "../../../features/tasks-slice";
+
+interface TaskProps {
+    key: string
+    task: TaskType
+}
+
+const Task: React.FC<TaskProps> = (props) => {
 
     const editMode = useAppSelector((state) => state.tasks.editMode)
+    const editId = useAppSelector((state) => state.tasks.editId)
+    const editText = useAppSelector((state) => state.tasks.editText)
     const dispatch = useAppDispatch()
     const [removeTask, { isLoading }] = useRemoveTaskMutation()
-    const [updateTask] = useUpdateTaskMutation()
+    const [checkTask] = useCheckTaskMutation()
+    const [changeTask] = useChangeTaskMutation()
     const onCheck = () => {
-        const onSuccess = (fulfilled : any) => {
+        const onSuccess = (fulfilled : TaskType) => {
             dispatch(checkToggled(fulfilled))
         }
-        props.task && updateTask(props.task).unwrap().then(fulfilled => onSuccess(fulfilled)).catch(rejected => console.error(rejected))
+        props.task && checkTask(props.task).unwrap().then(fulfilled => onSuccess(fulfilled)).catch(rejected => console.error(rejected))
     }
 
-    
-    let onDelete = () => {
+    const onDelete = () => {
         const onSuccess = (fulfilled : any) => {
-            console.log(fulfilled)
             dispatch(todoRemoved(fulfilled.id))
         }
         removeTask(props.task?.id).unwrap().then(fulfilled => onSuccess(fulfilled)).catch(rejected => console.error(rejected))
     }
 
-    let onEditStart = () => {
+    const onEditStart = () => {
         dispatch(toggleEditMode(true))
+        dispatch(editTextChanged(props.task?.text))
         dispatch(setEditId(props.task?.id))
     }
 
-    let onEditFinish = () => {
-        props.onEditFinish(props.task?.id, editingText)
+    const onEditFinish = () => {
+        dispatch(toggleEditMode(false))
+        const onSuccess = (fulfilled : TaskType) => {
+            dispatch(todoChanged(fulfilled))
+        }
+        props.task && editText && changeTask({...props.task, text: editText}).unwrap().then(fulfilled => onSuccess(fulfilled)).catch(rejected => console.error(rejected))
     }
 
-    const [editingText, setEditingText] = useState(props.task?.text)
+    const onEditTextChange = (e : string) => {
+        dispatch(editTextChanged(e))
+    }
 
     return (
         <li className={styles.listItem} key={props.task?.id}>
             {
-                editMode && props.editId === props.task?.id
+                editMode && editId === props.task?.id
                 ?   <input
                         type="text"
-                        value={editingText}
+                        value={editText}
                         onBlur={onEditFinish}
-                        onChange={e => setEditingText(e.target.value)}
+                        onChange={e => onEditTextChange(e.target.value)}
                     />
                 : <p
                         className={styles.taskText}
                         onDoubleClick={onEditStart}
-                    >{editingText}</p>
+                    >{props.task?.text}</p>
             }
             <div className={styles.functionality}>
                 <input type="checkbox" onChange={onCheck} checked={props.task?.isChecked} className={styles.checkBox}/>

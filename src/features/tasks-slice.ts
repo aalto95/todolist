@@ -1,12 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { useFetchTasksQuery } from "./api/tasks-api-slice";
 import { TaskType } from "../types/types";
 
 interface TasksState {
   text: string;
   tasks: Array<TaskType>;
   isFetching: boolean;
-  editText: string | null;
+  editText: string;
   editId: string | null;
   editMode: boolean;
 }
@@ -15,7 +14,7 @@ const initialState: TasksState = {
   text: "",
   tasks: [],
   isFetching: false,
-  editText: null,
+  editText: "",
   editId: null,
   editMode: false,
 };
@@ -30,11 +29,18 @@ const tasksSlice = createSlice({
     textChanged(state, action) {
       state.text = action.payload;
     },
+    editTextChanged(state, action) {
+      state.editText = action.payload;
+    },
     todoAdded(state, action) {
       state.tasks.push(action.payload);
     },
     todoRemoved(state, action) {
       state.tasks = state.tasks.filter((todo) => todo.id !== action.payload);
+    },
+    todoChanged(state, action) {
+      state.tasks.filter((todo) => todo.id === action.payload.id)[0].text =
+        action.payload.text;
     },
     toggleEditMode(state, action) {
       state.editMode = action.payload;
@@ -57,5 +63,7 @@ export const {
   setTasks,
   checkToggled,
   todoRemoved,
+  todoChanged,
+  editTextChanged,
 } = tasksSlice.actions;
 export default tasksSlice.reducer;

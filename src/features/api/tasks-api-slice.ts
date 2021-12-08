@@ -33,9 +33,19 @@ export const apiSlice = createApi({
         }),
         invalidatesTags: (result, error, id) => [{ type: "Tasks", id }],
       }),
-      updateTask: builder.mutation<TaskType, Partial<TaskType>>({
+      checkTask: builder.mutation<TaskType, Partial<TaskType>>({
         query: (data) => {
           const { id, ...body } = { ...data, isChecked: !data.isChecked };
+          return {
+            url: `/${id}`,
+            method: "PUT",
+            body,
+          };
+        },
+      }),
+      changeTask: builder.mutation<TaskType, Partial<TaskType>>({
+        query: (data) => {
+          const { id, ...body } = data;
           return {
             url: `/${id}`,
             method: "PUT",
@@ -51,5 +61,6 @@ export const {
   useFetchTasksQuery,
   useAddTaskMutation,
   useRemoveTaskMutation,
-  useUpdateTaskMutation,
+  useCheckTaskMutation,
+  useChangeTaskMutation,
 } = apiSlice;
