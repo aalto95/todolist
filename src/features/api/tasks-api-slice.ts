@@ -1,54 +1,55 @@
-import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react'
-
-interface Task {
-  id?: number,
-  text: string,
-  isChecked?: boolean
-}
-
-const DOGS_API_KEY = '0dbe24b1-9f1a-4603-bd8d-e1d45daa6090'
+import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
+import { TaskType } from "../../types/types";
 
 export const apiSlice = createApi({
-  reducerPath: 'api',
+  reducerPath: "api",
   baseQuery: fetchBaseQuery({
-    baseUrl: 'https://60a0e51dd2855b00173b15c9.mockapi.io/todolist',
+    baseUrl: "https://60a0e51dd2855b00173b15c9.mockapi.io/todolist",
   }),
-  tagTypes: ['Tasks'],
+  tagTypes: ["Tasks"],
   endpoints(builder) {
     return {
-      fetchTasks: builder.query<Task[], number | void> ({
+      fetchTasks: builder.query<TaskType[], number | void>({
         query: () => ({
           url: `/`,
-          method: 'GET'
+          method: "GET",
         }),
       }),
-      addTask: builder.mutation<Task, Partial<Task>>({
+      addTask: builder.mutation<TaskType, Partial<TaskType>>({
         query: (body) => ({
           url: `/`,
-          method: 'POST',
-          body
+          method: "POST",
+          body,
         }),
-        invalidatesTags: [{ type: 'Tasks', id: 'LIST' }],
+        invalidatesTags: [{ type: "Tasks", id: "LIST" }],
       }),
-      removeTask: builder.mutation<{ success: boolean, id: number }, number | undefined>({
+      removeTask: builder.mutation<
+        { success: boolean; id: string },
+        string | undefined
+      >({
         query: (id) => ({
           url: `/${id}`,
-          method: 'DELETE'
+          method: "DELETE",
         }),
-        invalidatesTags: (result, error, id) => [{ type: 'Tasks', id}]
+        invalidatesTags: (result, error, id) => [{ type: "Tasks", id }],
       }),
-      updateTask: builder.mutation<Task, Partial<Task>>({
+      updateTask: builder.mutation<TaskType, Partial<TaskType>>({
         query: (data) => {
-          const {id, ...body} = data
+          const { id, ...body } = { ...data, isChecked: !data.isChecked };
           return {
             url: `/${id}`,
-            method: 'PUT',
-            body
-          }
-        }
-      })
-    }
-  }
-})
+            method: "PUT",
+            body,
+          };
+        },
+      }),
+    };
+  },
+});
 
-export const { useFetchTasksQuery, useAddTaskMutation, useRemoveTaskMutation, useUpdateTaskMutation } = apiSlice
+export const {
+  useFetchTasksQuery,
+  useAddTaskMutation,
+  useRemoveTaskMutation,
+  useUpdateTaskMutation,
+} = apiSlice;

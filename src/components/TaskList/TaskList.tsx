@@ -24,10 +24,9 @@ const TaskList: React.FC = (props) => {
 
     const [addTask, { isLoading }] = useAddTaskMutation()
 
-    let submitForm = (e : any) => {
+    const submitForm = (e : any) => {
         e.preventDefault()
-        let onSuccess = (fulfilled : any) => {
-            console.log(fulfilled)
+        const onSuccess = (fulfilled : any) => {
             dispatch(todoAdded(fulfilled))
             dispatch(textChanged(""))
         }
@@ -37,7 +36,6 @@ const TaskList: React.FC = (props) => {
 
     return (
         <>
-            {isFetching ? <p>loading...</p> : <p>loaded</p>}
             <h1 className={styles.title}>To-Do List</h1>
             <div className={styles.taskWrapper}>
                 <div className={styles.taskDescription}>
